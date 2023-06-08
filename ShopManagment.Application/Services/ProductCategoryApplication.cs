@@ -37,7 +37,7 @@ public class ProductCategoryApplication : IProductCategoryApplication {
         return op.Successed("عملیات بروزرسانی دسته بندی محصول با موفقیت به اتمام رسید");
     }
 
-    public EditProductCategory GetDetailes(long id) {
+    public EditProductCategory? GetDetailes(long id) {
         return _categoryRepository.GetDetailes(id);
     }
 
@@ -46,10 +46,14 @@ public class ProductCategoryApplication : IProductCategoryApplication {
     }
 
     public OprationResult Remove(long id) {
-        throw new NotImplementedException();
+        var op = new OprationResult();
+        _categoryRepository.Remove(id);
+        return op.Successed();
     }
 
     public OprationResult Restore(long id) {
-        throw new NotImplementedException();
+        var op = new OprationResult();
+        _categoryRepository.Restore(id);
+        return op.Successed();
     }
 }

@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Application.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Application", "ShopManagment.Application\ShopManagment.Application.csproj", "{66FA71CE-B513-4A80-8188-3E306B9E497C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Infrastructure", "SM.Infrastructure", "{5DE5F150-7B67-488F-9575-1AABD0A26550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Infrastructure.EFCore", "ShopManagment.Infrastructure.EFCore\ShopManagment.Infrastructure.EFCore.csproj", "{AAC85E62-484A-4557-921C-73BA254DB278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Configuration", "ShopManagment.Configuration\ShopManagment.Configuration.csproj", "{F5F63E43-6230-488B-A5C5-DE07F85D4062}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +47,14 @@ Global
 		{66FA71CE-B513-4A80-8188-3E306B9E497C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66FA71CE-B513-4A80-8188-3E306B9E497C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66FA71CE-B513-4A80-8188-3E306B9E497C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC85E62-484A-4557-921C-73BA254DB278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC85E62-484A-4557-921C-73BA254DB278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC85E62-484A-4557-921C-73BA254DB278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC85E62-484A-4557-921C-73BA254DB278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F63E43-6230-488B-A5C5-DE07F85D4062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F63E43-6230-488B-A5C5-DE07F85D4062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F63E43-6230-488B-A5C5-DE07F85D4062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F63E43-6230-488B-A5C5-DE07F85D4062}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +66,9 @@ Global
 		{C0E4F935-407D-40EF-A682-ECA62C9184EE} = {47DD6144-C298-4A63-949E-6AE036E4E84F}
 		{E96DE45C-FAE6-42B3-A11C-57BEEC30EFB3} = {C0E4F935-407D-40EF-A682-ECA62C9184EE}
 		{66FA71CE-B513-4A80-8188-3E306B9E497C} = {C0E4F935-407D-40EF-A682-ECA62C9184EE}
+		{5DE5F150-7B67-488F-9575-1AABD0A26550} = {47DD6144-C298-4A63-949E-6AE036E4E84F}
+		{AAC85E62-484A-4557-921C-73BA254DB278} = {5DE5F150-7B67-488F-9575-1AABD0A26550}
+		{F5F63E43-6230-488B-A5C5-DE07F85D4062} = {5DE5F150-7B67-488F-9575-1AABD0A26550}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99538D7B-0704-4E11-87C0-B2E4D3207AD7}
