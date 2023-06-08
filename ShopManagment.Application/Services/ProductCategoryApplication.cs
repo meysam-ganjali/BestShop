@@ -18,14 +18,14 @@ public class ProductCategoryApplication : IProductCategoryApplication {
         string slug = command.Slug.ToSlug();
         ProductCategory productCategory = new ProductCategory(command.Name, command.Picture, command.PictureAlt,
             command.PictureTitle, command.MetaDes, command.KeyWord, slug, command.Des);
-        _categoryRepository.Create(productCategory);
+        _categoryRepository.Add(productCategory);
         _categoryRepository.SaveChanges();
         return op.Successed($"دسته بندی محصول با عنوان {command.Name} در دیتابیس با موفقیت ثبت شد");
     }
 
     public OprationResult Edit(EditProductCategory command) {
         var op = new OprationResult();
-        var productCategory = _categoryRepository.GetBy(command.Id);
+        var productCategory = _categoryRepository.Get(command.Id);
         if (productCategory == null)
             return op.Failed("دسته بندی محصول با این مشخصه یافت نشد");
         if (_categoryRepository.IsExist(x => x.Name == command.Name && x.Id != command.Id))
@@ -47,7 +47,7 @@ public class ProductCategoryApplication : IProductCategoryApplication {
 
     public OprationResult Remove(long id) {
         var op = new OprationResult();
-        _categoryRepository.Remove(id);
+        _categoryRepository.Delete(id);
         return op.Successed();
     }
 
