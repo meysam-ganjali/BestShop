@@ -8,7 +8,7 @@ public interface IProductCategoryApplication
     OprationResult Edit(EditProductCategory command);
     EditProductCategory? GetDetailes(long id);
     List<ProductCategoryViewModel> Search(ProductCategorySearchModel model);
-
+    List<ProductCategoryViewModel> GetProductCategories();
     OprationResult Remove(long id);
     OprationResult Restore(long id);
 }

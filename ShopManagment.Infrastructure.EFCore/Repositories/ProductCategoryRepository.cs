@@ -42,4 +42,11 @@ public class ProductCategoryRepository : BaseRepository<long,ProductCategory>,IP
             PictureTitle = x.PictureTitle
         }).FirstOrDefault(x => x.Id == id);
     }
+    public List<ProductCategoryViewModel> GetProductCategories() {
+        return _context.ProductCategories.Select(x => new ProductCategoryViewModel {
+            Id = x.Id,
+            Name = x.Name
+        }).ToList();
+    }
+
 }

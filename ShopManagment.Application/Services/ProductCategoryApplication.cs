@@ -44,7 +44,9 @@ public class ProductCategoryApplication : IProductCategoryApplication {
     public List<ProductCategoryViewModel> Search(ProductCategorySearchModel model) {
         return _categoryRepository.Search(model);
     }
-
+    public List<ProductCategoryViewModel> GetProductCategories() {
+        return _categoryRepository.GetProductCategories();
+    }
     public OprationResult Remove(long id) {
         var op = new OprationResult();
         _categoryRepository.Delete(id);

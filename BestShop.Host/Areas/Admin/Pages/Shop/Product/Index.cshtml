@@ -12,6 +12,35 @@
         </p>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">لیست محصولات (@Model.Products.Count)</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" role="form" method="get">
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.Name"></label>
+                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام محصول">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.Code"></label>
+                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.CategoryId"></label>
+                        <select class="form-control" asp-for="SearchModel.CategoryId" asp-items="Model.ProductCategories">
+                            <option value="0">گروه محصولی ...</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
+                    <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-12">
@@ -62,9 +91,9 @@
                                         <td><img src="@item.Picture" style="width: 70px; height: 70px" /></td>
                                         <td>@item.Name</td>
                                         <td>@item.CategoryName</td>
-                                        <td>@item.UnitPraice.ToString("n0") T</td>
+                                        <td>@item.UnitPraice.ToString("n0") تومان</td>
                                         <td>
-                                            <p class="text-center"> <i class="fa @(item.StockStatus?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
+                                            <p class="text-center"> <i class="fa @(!item.StockStatus?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
                                         </td>
                                         <td>
                                             <p class="text-center"> <i class="fa @(item.IsRemoved?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
