@@ -18,5 +18,9 @@ public class ProductCategoryMapping:IEntityTypeConfiguration<ProductCategory>
         builder.Property(x => x.MetaDes).HasMaxLength(1000).IsRequired();
         builder.Property(x => x.KeyWord).HasMaxLength(1000).IsRequired();
         builder.Property(x => x.Slug).HasMaxLength(1000).IsRequired();
+
+        builder.HasMany(x => x.Products)
+            .WithOne(x => x.Category)
+            .HasForeignKey(x => x.CategoryId);
     }
 }
