@@ -48,12 +48,14 @@ public class ProductCategoryApplication : IProductCategoryApplication {
     public OprationResult Remove(long id) {
         var op = new OprationResult();
         _categoryRepository.Delete(id);
+        _categoryRepository.SaveChanges();
         return op.Successed();
     }
 
     public OprationResult Restore(long id) {
         var op = new OprationResult();
         _categoryRepository.Restore(id);
+        _categoryRepository.SaveChanges();
         return op.Successed();
     }
 }

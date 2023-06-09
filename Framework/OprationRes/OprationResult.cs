@@ -4,20 +4,20 @@ public class OprationResult
 {
 
     public string Message { get; set; }
-    public bool IsSucces { get; set; }
+    public bool IsSuccedded { get; set; }
 
     public OprationResult()
     {
-        IsSucces = false;
+        IsSuccedded = false;
     }
     public OprationResult Successed(string message = "عملیات با موفقیت انجام شد") {
         this.Message = message;
-        this.IsSucces = true;
+        this.IsSuccedded = true;
         return this;
     }
     public OprationResult Failed(string message = "عملیات با شکست مواجهه شد") {
         this.Message = message;
-        this.IsSucces = false;
+        this.IsSuccedded = false;
         return this;
     }
 }

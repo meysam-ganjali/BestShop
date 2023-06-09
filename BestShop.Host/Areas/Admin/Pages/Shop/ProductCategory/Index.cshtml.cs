@@ -29,5 +29,27 @@ namespace BestShop.Host.Areas.Admin.Pages.Shop.ProductCategory
             var result = _productCategoryApplication.Create(command);
             return new JsonResult(result);
         }
+
+        public IActionResult OnGetEdit(long id)
+        {
+            var model = _productCategoryApplication.GetDetailes(id);
+            return Partial("./Edit", model);
+        }
+
+        public JsonResult OnPostEdit(EditProductCategory command)
+        {
+            var result = _productCategoryApplication.Edit(command);
+            return new JsonResult(result);
+        }
+
+        public IActionResult OnGetRemove(long id)
+        {
+            var result = _productCategoryApplication.Remove(id);
+            return RedirectToPage("./Index");
+        }
+        public IActionResult OnGetRestore(long id) {
+            var result = _productCategoryApplication.Restore(id);
+            return RedirectToPage("./Index");
+        }
     }
 }

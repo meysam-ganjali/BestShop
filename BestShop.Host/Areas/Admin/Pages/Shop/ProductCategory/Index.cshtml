@@ -67,9 +67,21 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-warning pull-right m-rl-5"
-                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
+                                          @if (item.IsRemoveed)
+                                          {
+                                              <a class="btn btn-success pull-right m-rl-5" asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id">
+                                                  <i class="fa fa-refresh"></i> بازیابی
+                                              </a>
+                                          }
+                                          else
+                                          {
+                                              <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id">
+                                                  <i class="fa fa-trash"></i> حذف
+                                              </a>
+                                          }
                                         </td>
                                     </tr>
                                 }
