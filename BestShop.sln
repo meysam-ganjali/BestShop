@@ -37,15 +37,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLM.Domains", "SLM.Domains"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLM.Infrastructure", "SLM.Infrastructure", "{7318FA4B-4B77-440A-9653-86A88437F492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderMangment.Application.Contracts", "SliderMangment.Application.Contract\SliderMangment.Application.Contracts.csproj", "{5BE9DE30-87FA-4EF3-9564-E90C98523971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderMangment.Application.Contracts", "SliderMangment.Application.Contract\SliderMangment.Application.Contracts.csproj", "{5BE9DE30-87FA-4EF3-9564-E90C98523971}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Application", "SliderManagment.Application\SliderManagment.Application.csproj", "{EC753258-4037-43BA-A5A1-B673597F8BBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Application", "SliderManagment.Application\SliderManagment.Application.csproj", "{EC753258-4037-43BA-A5A1-B673597F8BBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Domains", "SliderManagment.Domains\SliderManagment.Domains.csproj", "{CA357376-1310-4296-84A3-52A8D85721AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Domains", "SliderManagment.Domains\SliderManagment.Domains.csproj", "{CA357376-1310-4296-84A3-52A8D85721AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Infrastructure.EFCore", "SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj", "{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Infrastructure.EFCore", "SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj", "{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Configuration", "SliderManagment.Configuration\SliderManagment.Configuration.csproj", "{9C7A638D-FDE0-412E-9F88-24B123628F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Configuration", "SliderManagment.Configuration\SliderManagment.Configuration.csproj", "{9C7A638D-FDE0-412E-9F88-24B123628F2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -31,15 +31,21 @@
                 @*@if (AuthHelper.CurrentAccountRole() == Roles.Administrator)
                 {*@
 
-                    <li class="has_sub">
-                        <a class="waves-effect"><i class="md md-mail"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a asp-page="/Shop/Slides/Index">اسلایدر</a></li>
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-shop"></i><span> مدیریت فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
                         <li><a asp-page="/Shop/ProductCategory/Index">گروه محصولات</a></li>
-                            <li><a asp-page="/Shop/Product/Index">محصولات</a></li>
-                            <li><a asp-page="/Shop/ProductPicture/Index">عکس محصولات</a></li>
-                        </ul>
-                    </li>
+                        <li><a asp-page="/Shop/Product/Index">محصولات</a></li>
+                        <li><a asp-page="/Shop/ProductPicture/Index">عکس محصولات</a></li>
+                    </ul>
+                </li>
+                
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-movie"></i><span> مدیریت اسلاید ها </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a asp-page="/Slider/Index">اسلایدر</a></li>
+                    </ul>
+                </li>
                 @*}*@
 
                 <li>

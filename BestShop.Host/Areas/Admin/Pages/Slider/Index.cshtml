@@ -1,14 +1,14 @@
 ﻿@page
-@model BestShop.Host.Areas.Admin.Pages.Shop.Product.IndexModel
-
+@model BestShop.Host.Areas.Admin.Pages.Slider.IndexModel
 @{
-    ViewData["title"] = "مدیریت  محصولات";
+    ViewData["Title"] = "مدیریت اسلایدر ها";
 }
+
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد محصول جدید</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد اسلاید جدید</a>
         </p>
     </div>
 </div>
@@ -16,23 +16,17 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو در محصولات (@Model.Products.Count)</h3>
+                <h3 class="panel-title"> جستجو در اسلایدرها (@Model.Sliders.Count)</h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.Name"></label>
-                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام محصول" value=" ">
+                        <label class="sr-only" asp-for="SearchModel.Heading">Heading</label>
+                        <input class="form-control" asp-for="SearchModel.Heading" placeholder="عنوان هد..." >
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.Code"></label>
-                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد" value=" ">
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" asp-for="SearchModel.CategoryId"></label>
-                        <select class="form-control" asp-for="SearchModel.CategoryId" asp-items="Model.ProductCategories">
-                            <option value="0">گروه محصولی ...</option>
-                        </select>
+                        <label class="sr-only" asp-for="SearchModel.Title">عنوان</label>
+                        <input class="form-control" asp-for="SearchModel.Title" placeholder="عنوان...">
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
@@ -41,16 +35,15 @@
         </div>
     </div>
 </div>
-
 <div class="row" id="ProductCategoriesDiv">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست  محصولات</h3>
+                <h3 class="panel-title">لیست  اسلایدر ها</h3>
                 @if (!string.IsNullOrWhiteSpace(Model.Message)) {
 
                     <div class="alert alert-info alert-dismissible  show" role="alert">
-                       @Model.Message
+                        @Model.Message
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -65,25 +58,21 @@
                                 <tr>
                                     <th>#</th>
                                     <th>عکس</th>
-                                    <th>نام</th>
-                                    <th>گروه</th>
-                                    <th>قیمت</th>
-                                    <th>موجود در انبار</th>
+                                    <th>عنوان هد</th>
+                                    <th>عنوان</th>
+                                    <th>تاریخ ایجاد</th>
                                     <th>فعال/غیرفعال</th>
                                     <th>عملیات</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.Products) {
+                                @foreach (var item in Model.Sliders) {
                                     <tr>
                                         <td>@item.Id</td>
-                                        <td><img src="@item.Picture" style="width: 70px; height: 70px" /></td>
-                                        <td>@item.Name</td>
-                                        <td>@item.CategoryName</td>
-                                        <td>@item.UnitPraice.ToString("n0") تومان</td>
-                                        <td>
-                                            <p class="text-center"> <i class="fa @(!item.StockStatus?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
-                                        </td>
+                                        <td><img src="@item.Picture" style="width: 200px; height: 70px" /></td>
+                                        <td>@item.Heading</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.CreationDate</td>
                                         <td>
                                             <p class="text-center"> <i class="fa @(item.IsRemoved?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
                                         </td>
@@ -99,15 +88,6 @@
                                             } else {
                                                 <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id">
                                                     <i class="fa fa-trash"></i> حذف
-                                                </a>
-                                            }
-                                            @if (item.StockStatus) {
-                                                <a class="btn btn-warning pull-right m-rl-5" asp-page="./Index" asp-page-handler="NotInStok" asp-route-id="@item.Id">
-                                                    <i class="fa fa-close"></i> اتمام موجودی
-                                                </a>
-                                            } else {
-                                                <a class="btn btn-primary pull-right m-rl-5" asp-page="./Index" asp-page-handler="IsInStock" asp-route-id="@item.Id">
-                                                    <i class="fa fa-check"></i> شارژ موجودی
                                                 </a>
                                             }
                                         </td>
