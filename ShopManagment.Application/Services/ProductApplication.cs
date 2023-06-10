@@ -69,6 +69,11 @@ public class ProductApplication : IProductApplication {
         return _productRepository.Search(model);
     }
 
+    public List<ProductViewModel> GetProducts()
+    {
+        return _productRepository.GetProducts();
+    }
+
     public OprationResult Remove(long id) {
         OprationResult op = new OprationResult();
         var product = _productRepository.Get(id);

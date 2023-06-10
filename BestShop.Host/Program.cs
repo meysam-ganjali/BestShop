@@ -1,4 +1,5 @@
 using ShopManagment.Configuration;
+using SliderManagment.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
@@ -8,6 +9,7 @@ builder.Services.AddRazorPages();
 
 string connectionStr = builder.Configuration.GetConnectionString("BestShopConnection");
 ShopManagmentBootstapper.Configure(builder.Services, connectionStr);
+SliderManagmentBootstrapper.Configure(builder.Services, connectionStr);
 
 #endregion
 

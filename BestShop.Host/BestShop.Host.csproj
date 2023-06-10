@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShopManagment.Configuration\ShopManagment.Configuration.csproj" />
+    <ProjectReference Include="..\SliderManagment.Configuration\SliderManagment.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

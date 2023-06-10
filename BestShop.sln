@@ -7,27 +7,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopManagment", "ShopManagm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Domains", "SM.Domains", "{BD31E6C9-64A4-40FB-9628-D529979AA61A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Domains", "ShopManagment.Domains\ShopManagment.Domains.csproj", "{9DA171CC-FE21-4867-8CE7-DE2618A6993D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagment.Domains", "ShopManagment.Domains\ShopManagment.Domains.csproj", "{9DA171CC-FE21-4867-8CE7-DE2618A6993D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{FBE75CAB-9922-4F12-B546-A7271C1516F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{848500A9-989B-46E2-8E6E-38379A5E953B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Framework.csproj", "{848500A9-989B-46E2-8E6E-38379A5E953B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Application", "SM.Application", "{C0E4F935-407D-40EF-A682-ECA62C9184EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Application.Contracts", "ShopManagment.Application.Contracts\ShopManagment.Application.Contracts.csproj", "{E96DE45C-FAE6-42B3-A11C-57BEEC30EFB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagment.Application.Contracts", "ShopManagment.Application.Contracts\ShopManagment.Application.Contracts.csproj", "{E96DE45C-FAE6-42B3-A11C-57BEEC30EFB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Application", "ShopManagment.Application\ShopManagment.Application.csproj", "{66FA71CE-B513-4A80-8188-3E306B9E497C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagment.Application", "ShopManagment.Application\ShopManagment.Application.csproj", "{66FA71CE-B513-4A80-8188-3E306B9E497C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SM.Infrastructure", "SM.Infrastructure", "{5DE5F150-7B67-488F-9575-1AABD0A26550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Infrastructure.EFCore", "ShopManagment.Infrastructure.EFCore\ShopManagment.Infrastructure.EFCore.csproj", "{AAC85E62-484A-4557-921C-73BA254DB278}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagment.Infrastructure.EFCore", "ShopManagment.Infrastructure.EFCore\ShopManagment.Infrastructure.EFCore.csproj", "{AAC85E62-484A-4557-921C-73BA254DB278}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagment.Configuration", "ShopManagment.Configuration\ShopManagment.Configuration.csproj", "{F5F63E43-6230-488B-A5C5-DE07F85D4062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagment.Configuration", "ShopManagment.Configuration\ShopManagment.Configuration.csproj", "{F5F63E43-6230-488B-A5C5-DE07F85D4062}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endpoint", "Endpoint", "{0433EC57-51A4-4948-BE95-BDDDEFC586BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestShop.Host", "BestShop.Host\BestShop.Host.csproj", "{ED990CB2-7E12-4EDC-B5F1-5E659473054C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestShop.Host", "BestShop.Host\BestShop.Host.csproj", "{ED990CB2-7E12-4EDC-B5F1-5E659473054C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SliderManagment", "SliderManagment", "{E3C72DDE-F0EB-47CA-9FBB-0D2743F1C254}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLM.Application", "SLM.Application", "{674E9667-1334-43F9-8EAE-EE908DD3CF14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLM.Domains", "SLM.Domains", "{1064E9B9-B990-4FBD-A7E7-2489B590F23D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLM.Infrastructure", "SLM.Infrastructure", "{7318FA4B-4B77-440A-9653-86A88437F492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderMangment.Application.Contracts", "SliderMangment.Application.Contract\SliderMangment.Application.Contracts.csproj", "{5BE9DE30-87FA-4EF3-9564-E90C98523971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Application", "SliderManagment.Application\SliderManagment.Application.csproj", "{EC753258-4037-43BA-A5A1-B673597F8BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Domains", "SliderManagment.Domains\SliderManagment.Domains.csproj", "{CA357376-1310-4296-84A3-52A8D85721AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Infrastructure.EFCore", "SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj", "{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliderManagment.Configuration", "SliderManagment.Configuration\SliderManagment.Configuration.csproj", "{9C7A638D-FDE0-412E-9F88-24B123628F2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +81,26 @@ Global
 		{ED990CB2-7E12-4EDC-B5F1-5E659473054C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED990CB2-7E12-4EDC-B5F1-5E659473054C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED990CB2-7E12-4EDC-B5F1-5E659473054C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE9DE30-87FA-4EF3-9564-E90C98523971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE9DE30-87FA-4EF3-9564-E90C98523971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE9DE30-87FA-4EF3-9564-E90C98523971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE9DE30-87FA-4EF3-9564-E90C98523971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC753258-4037-43BA-A5A1-B673597F8BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC753258-4037-43BA-A5A1-B673597F8BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC753258-4037-43BA-A5A1-B673597F8BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC753258-4037-43BA-A5A1-B673597F8BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA357376-1310-4296-84A3-52A8D85721AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA357376-1310-4296-84A3-52A8D85721AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA357376-1310-4296-84A3-52A8D85721AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA357376-1310-4296-84A3-52A8D85721AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +116,14 @@ Global
 		{AAC85E62-484A-4557-921C-73BA254DB278} = {5DE5F150-7B67-488F-9575-1AABD0A26550}
 		{F5F63E43-6230-488B-A5C5-DE07F85D4062} = {5DE5F150-7B67-488F-9575-1AABD0A26550}
 		{ED990CB2-7E12-4EDC-B5F1-5E659473054C} = {0433EC57-51A4-4948-BE95-BDDDEFC586BF}
+		{674E9667-1334-43F9-8EAE-EE908DD3CF14} = {E3C72DDE-F0EB-47CA-9FBB-0D2743F1C254}
+		{1064E9B9-B990-4FBD-A7E7-2489B590F23D} = {E3C72DDE-F0EB-47CA-9FBB-0D2743F1C254}
+		{7318FA4B-4B77-440A-9653-86A88437F492} = {E3C72DDE-F0EB-47CA-9FBB-0D2743F1C254}
+		{5BE9DE30-87FA-4EF3-9564-E90C98523971} = {674E9667-1334-43F9-8EAE-EE908DD3CF14}
+		{EC753258-4037-43BA-A5A1-B673597F8BBF} = {674E9667-1334-43F9-8EAE-EE908DD3CF14}
+		{CA357376-1310-4296-84A3-52A8D85721AD} = {1064E9B9-B990-4FBD-A7E7-2489B590F23D}
+		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3} = {7318FA4B-4B77-440A-9653-86A88437F492}
+		{9C7A638D-FDE0-412E-9F88-24B123628F2F} = {7318FA4B-4B77-440A-9653-86A88437F492}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99538D7B-0704-4E11-87C0-B2E4D3207AD7}

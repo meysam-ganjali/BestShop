@@ -10,6 +10,7 @@ public interface IProductApplication
     OprationResult IsInStock(long id);
     OprationResult NotInStock(long id);
     List<ProductViewModel> Search(ProductSearchModel model);
+    List<ProductViewModel> GetProducts();
     OprationResult Remove(long id);
     OprationResult Restore(long id);
 }

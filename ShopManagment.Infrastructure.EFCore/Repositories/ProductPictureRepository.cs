@@ -30,13 +30,16 @@ public class ProductPictureRepository:BaseRepository<long,ProductPicture>,IProdu
 
     public List<ProductPictureViewModel> Search(ProductPictureSearchModel model)
     {
-        var query = _context.ProductPictures.Select(x => new ProductPictureViewModel()
+        var query = _context.ProductPictures
+            .Include(x=>x.Product)
+            .Select(x => new ProductPictureViewModel()
         {
             Picture = x.Picture,
             Id = x.Id,
             ProductId = x.ProductId,
             CreatedDate = x.CreatedDate,
             IsRemoved = x.IsRemove,
+            ProductName = x.Product.Name
         });
         if (model.ProductId > 0 || model.ProductId != 0)
             query = query.Where(x => x.ProductId == model.ProductId);

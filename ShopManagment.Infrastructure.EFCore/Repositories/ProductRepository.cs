@@ -34,6 +34,23 @@ public class ProductRepository : BaseRepository<long, Product>, IProductReposito
         return query.OrderByDescending(x=>x.Id).ToList();
     }
 
+    public List<ProductViewModel> GetProducts()
+    {
+        var query = _context.Products.Include(x => x.Category)
+           .Select(x => new ProductViewModel() {
+               Name = x.Name,
+               Picture = x.Picture,
+               CategoryName = x.Category.Name,
+               CategoryId = x.Category.Id,
+               Code = x.Code,
+               Id = x.Id,
+               UnitPraice = x.UnitPraice,
+               IsRemoved = x.IsRemove,
+               StockStatus = x.IsInStock
+           });
+        return query.OrderByDescending(x => x.Id).ToList();
+    }
+
     public EditProduct? GetDetailes(long id) {
         return _context.Products.Select(x => new EditProduct {
             Code = x.Code,

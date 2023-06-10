@@ -7,4 +7,5 @@ public class ProductPictureViewModel
     public long ProductId { get; set; }
     public DateTime CreatedDate { get; set; }
     public bool IsRemoved { get; set; }
+    public string ProductName { get; set; }
 }

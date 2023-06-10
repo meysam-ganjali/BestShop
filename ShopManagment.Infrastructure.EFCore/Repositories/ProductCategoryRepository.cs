@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using ShopManagment.Application.Contracts.ProductCategory;
 using ShopManagment.Domains.Agg.ProductCategory;
 using ShopManagment.Infrastructure.EFCore.Context;
@@ -15,14 +16,16 @@ public class ProductCategoryRepository : BaseRepository<long,ProductCategory>,IP
 
     public List<ProductCategoryViewModel> Search(ProductCategorySearchModel model)
     {
-        var query = _context.ProductCategories.Select(x => new ProductCategoryViewModel()
+        var query = _context.ProductCategories
+            .Include(x=>x.Products)
+            .Select(x => new ProductCategoryViewModel()
         {
             Name = x.Name,
             CreatedDate = x.CreatedDate,
             Id = x.Id,
             IsRemoveed = x.IsRemove,
             Picture = x.Picture,
-            ProductInThis = 15
+            ProductInThis = x.Products.Count
         });
         if (!string.IsNullOrWhiteSpace(model.Name))
             query = query.Where(x => x.Name.Contains(model.Name));
