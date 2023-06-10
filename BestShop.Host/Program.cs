@@ -33,7 +33,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapDefaultControllerRoute();
+//app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
 
