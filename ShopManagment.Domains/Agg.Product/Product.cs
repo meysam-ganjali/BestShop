@@ -7,7 +7,7 @@ public class Product : BaseEntity {
 
     public string Name { get; private set; }
     public long UnitPraice { get; set; }
-    public string Code { get; private set; }
+    public string? Code { get; private set; }
     public string ShortDescription { get; private set; }
     public string Description { get; private set; }
     public string Picture { get; private set; }
@@ -19,7 +19,12 @@ public class Product : BaseEntity {
     public string MetaDescription { get; private set; }
     public bool IsInStock { get; private set; }
     public ProductCategory.ProductCategory Category { get; private set; }
+    public List<ProductPicture.ProductPicture> ProductPictures { get; private set; }
 
+    public Product()
+    {
+        ProductPictures = new List<ProductPicture.ProductPicture>();
+    }
     public Product(string name, long unitPraice, string code, string shortDescription, string description, string picture, string pictureAlt, string pictureTitle, long categoryId, string slug, string keywords, string metaDescription) {
         Name = name;
         UnitPraice = unitPraice;

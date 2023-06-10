@@ -50,6 +50,6 @@ public class ProductRepository : BaseRepository<long, Product>, IProductReposito
             PictureAlt = x.PictureAlt,
             PictureTitle = x.PictureTitle,
             ShortDescription = x.ShortDescription,
-        }).FirstOrDefault();
+        }).FirstOrDefault(x=>x.Id == id);
     }
 }

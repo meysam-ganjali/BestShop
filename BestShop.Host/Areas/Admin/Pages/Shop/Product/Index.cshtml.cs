@@ -8,6 +8,7 @@ namespace BestShop.Host.Areas.Admin.Pages.Shop.Product
 {
     public class IndexModel : PageModel
     {
+        [TempData] public string Message { get; set; }
         public ProductSearchModel SearchModel;
         public List<ProductViewModel> Products;
         public SelectList ProductCategories;
@@ -36,6 +37,42 @@ namespace BestShop.Host.Areas.Admin.Pages.Shop.Product
         public JsonResult OnPostCreate(CreateProduct command) {
             var result = _productApplication.Create(command);
             return new JsonResult(result);
+        }
+
+        public IActionResult OnGetEdit(long id)
+        {
+            var command = _productApplication.GetDetailes(id);
+            command.Categories = _productCategoryApplication.GetProductCategories();
+            return Partial("./Edit", command);
+        }
+
+        public JsonResult OnPostEdit(EditProduct command)
+        {
+            var result = _productApplication.Edit(command);
+            return new JsonResult(result);
+        }
+
+        public IActionResult OnGetNotInStok(long id)
+        {
+            var result = _productApplication.NotInStock(id);
+            Message = result.Message;
+            return RedirectToPage("./Index");
+        }
+        public IActionResult OnGetIsInStock(long id) {
+            var result = _productApplication.IsInStock(id);
+            Message = result.Message;
+            return RedirectToPage("./Index");
+        }
+
+        public IActionResult OnGetRemove(long id) {
+            var result = _productApplication.Remove(id);
+            Message = result.Message;
+            return RedirectToPage("./Index");
+        }
+        public IActionResult OnGetRestore(long id) {
+            var result = _productApplication.Restore(id);
+            Message = result.Message;
+            return RedirectToPage("./Index");
         }
     }
 }

@@ -22,11 +22,11 @@
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Name"></label>
-                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام محصول">
+                        <input class="form-control" asp-for="SearchModel.Name" placeholder="نام محصول" value=" ">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.Code"></label>
-                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد">
+                        <input class="form-control" asp-for="SearchModel.Code" placeholder="کد" value=" ">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.CategoryId"></label>
@@ -67,6 +67,15 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">لیست  محصولات</h3>
+                @if (!string.IsNullOrWhiteSpace(Model.Message)) {
+
+                    <div class="alert alert-info alert-dismissible  show" role="alert">
+                       @Model.Message
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -100,21 +109,27 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-warning pull-right m-rl-5"
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
-                                          @if (item.IsRemoved)
-                                          {
-                                              <a class="btn btn-success pull-right m-rl-5" asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id">
-                                                  <i class="fa fa-refresh"></i> بازیابی
-                                              </a>
-                                          }
-                                          else
-                                          {
-                                              <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id">
-                                                  <i class="fa fa-trash"></i> حذف
-                                              </a>
-                                          }
+                                            @if (item.IsRemoved) {
+                                                <a class="btn btn-success pull-right m-rl-5" asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id">
+                                                    <i class="fa fa-refresh"></i> بازیابی
+                                                </a>
+                                            } else {
+                                                <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id">
+                                                    <i class="fa fa-trash"></i> حذف
+                                                </a>
+                                            }
+                                            @if (item.StockStatus) {
+                                                <a class="btn btn-warning pull-right m-rl-5" asp-page="./Index" asp-page-handler="NotInStok" asp-route-id="@item.Id">
+                                                    <i class="fa fa-close"></i> اتمام موجودی
+                                                </a>
+                                            } else {
+                                                <a class="btn btn-primary pull-right m-rl-5" asp-page="./Index" asp-page-handler="IsInStock" asp-route-id="@item.Id">
+                                                    <i class="fa fa-check"></i> شارژ موجودی
+                                                </a>
+                                            }
                                         </td>
                                     </tr>
                                 }
@@ -135,5 +150,6 @@
         $(document).ready(function () {
             $('#datatable').dataTable();
         });
+        $('.alert').alert()
     </script>
 }

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Agg.ProductCategory\" />
     <Folder Include="Agg.Product\" />
+    <Folder Include="Agg.ProductPicture\" />
   </ItemGroup>
 
   <ItemGroup>

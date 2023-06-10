@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="CategoryId" class="control-label">گروه محصول</label>
                     <select class="form-control" asp-for="CategoryId"
@@ -39,6 +39,13 @@
                         <option value="0">گروه محصول</option>
                     </select>
                     <span asp-validation-for="CategoryId" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Code" class="control-label">قیمت واحد</label>
+                    <input type="number" class="form-control" asp-for="UnitPraice">
+                    <span asp-validation-for="UnitPraice" class="error"></span>
                 </div>
             </div>
         </div>

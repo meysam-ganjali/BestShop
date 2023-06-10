@@ -12,7 +12,7 @@ public class ProductCategory:BaseEntity
     public string KeyWord { get; private set; }
     public string Slug { get; private set; }
     public string? Des { get; private set; }
-    public List<Product.Product> Products { get; set; }
+    public List<Product.Product> Products { get; private set; }
 
     public ProductCategory()
     {

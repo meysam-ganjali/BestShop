@@ -75,6 +75,7 @@ public class ProductApplication : IProductApplication {
         if (product == null)
             return op.Failed("محصولی با این مشخصه یافت نشد");
         product.Remove();
+        _productRepository.SaveChanges();
         return op.Successed();
     }
 
@@ -84,6 +85,7 @@ public class ProductApplication : IProductApplication {
         if (product == null)
             return op.Failed("محصولی با این مشخصه یافت نشد");
         product.Restore();
+        _productRepository.SaveChanges();
         return op.Successed();
     }
 }
