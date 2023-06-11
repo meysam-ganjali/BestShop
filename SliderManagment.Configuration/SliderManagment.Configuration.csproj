@@ -12,6 +12,7 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\BestShop.Query\BestShop.Query.csproj" />
 	  <ProjectReference Include="..\SliderManagment.Application\SliderManagment.Application.csproj" />
 	  <ProjectReference Include="..\SliderManagment.Domains\SliderManagment.Domains.csproj" />
 	  <ProjectReference Include="..\SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj" />

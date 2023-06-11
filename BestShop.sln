@@ -47,6 +47,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Infrastruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SliderManagment.Configuration", "SliderManagment.Configuration\SliderManagment.Configuration.csproj", "{9C7A638D-FDE0-412E-9F88-24B123628F2F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queries", "Queries", "{5DF9CB16-AFE2-4A11-A064-4403548A2C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestShop.Query", "BestShop.Query\BestShop.Query.csproj", "{95E77A7D-50B3-405F-81CA-14601F157608}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +105,10 @@ Global
 		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7A638D-FDE0-412E-9F88-24B123628F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E77A7D-50B3-405F-81CA-14601F157608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E77A7D-50B3-405F-81CA-14601F157608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E77A7D-50B3-405F-81CA-14601F157608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E77A7D-50B3-405F-81CA-14601F157608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +132,7 @@ Global
 		{CA357376-1310-4296-84A3-52A8D85721AD} = {1064E9B9-B990-4FBD-A7E7-2489B590F23D}
 		{BF13BFF7-A0C3-416F-8ECF-8FF742F6EAB3} = {7318FA4B-4B77-440A-9653-86A88437F492}
 		{9C7A638D-FDE0-412E-9F88-24B123628F2F} = {7318FA4B-4B77-440A-9653-86A88437F492}
+		{95E77A7D-50B3-405F-81CA-14601F157608} = {5DF9CB16-AFE2-4A11-A064-4403548A2C17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99538D7B-0704-4E11-87C0-B2E4D3207AD7}

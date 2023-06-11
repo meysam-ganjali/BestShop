@@ -21,4 +21,8 @@
     <ProjectReference Include="..\SliderManagment.Configuration\SliderManagment.Configuration.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewComponents\" />
+  </ItemGroup>
+
 </Project>
