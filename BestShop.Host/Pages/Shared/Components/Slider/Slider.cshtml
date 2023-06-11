@@ -40,7 +40,7 @@
                                                         <p class="slider-title slider-title--small">
                                                           @Html.Raw(item.Text)
                                                         </p>
-                                                        <a class="hero-slider-button" href="shop-left-sidebar.html">
+                                                        <a class="hero-slider-button" href="@item.Link" style="background-color: @(!string.IsNullOrWhiteSpace(item.BtnColorCode)?item.BtnColorCode:"")">
                                                             @item.LinkText <i class="ion-ios-plus-empty"></i>
                                                         </a>
                                                     </div>

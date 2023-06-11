@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Contracts\ProductCategory\" />
     <Folder Include="Contracts\Slider\" />
+    <Folder Include="Queries\ProductCategory\" />
     <Folder Include="Queries\SliderQuery\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopManagment.Infrastructure.EFCore\ShopManagment.Infrastructure.EFCore.csproj" />
     <ProjectReference Include="..\SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj" />
   </ItemGroup>
 
