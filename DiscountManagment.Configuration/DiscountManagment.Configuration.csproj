@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -11,10 +11,10 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
 	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\SliderManagment.Application\SliderManagment.Application.csproj" />
-	  <ProjectReference Include="..\SliderManagment.Domains\SliderManagment.Domains.csproj" />
-	  <ProjectReference Include="..\SliderManagment.Infrastructure.EFCore\SliderManagment.Infrastructure.EFCore.csproj" />
-	  <ProjectReference Include="..\SliderMangment.Application.Contract\SliderMangment.Application.Contracts.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscountManagment.Application.Contracts\DiscountManagment.Application.Contracts.csproj" />
+    <ProjectReference Include="..\DiscountManagment.Application\DiscountManagment.Application.csproj" />
+    <ProjectReference Include="..\DiscountManagment.Infrastructure.EFCore\DiscountManagment.Infrastructure.EFCore.csproj" />
+  </ItemGroup>
+
 </Project>

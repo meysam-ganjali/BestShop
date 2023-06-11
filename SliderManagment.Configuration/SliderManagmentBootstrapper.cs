@@ -1,5 +1,4 @@
-﻿using BestShop.Query.Contracts.Slider;
-using BestShop.Query.Queries.SliderQuery;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SliderManagment.Application.Services;
@@ -16,8 +15,7 @@ public class SliderManagmentBootstrapper
 
         service.AddTransient<ISliderApplication, SliderApplication>();
         service.AddTransient<ISliderRepository, SliderRepository>();
-
-        service.AddTransient<ISliderQuery, SliderQuery>();
+        
 
         service.AddDbContext<SliderDbConext>(op => {
             op.UseSqlServer(connctionString);

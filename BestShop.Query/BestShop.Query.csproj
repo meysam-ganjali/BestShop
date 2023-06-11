@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Contracts\ProductCategory\" />
     <Folder Include="Contracts\Slider\" />
+    <Folder Include="Boostrapper\" />
     <Folder Include="Queries\ProductCategory\" />
     <Folder Include="Queries\SliderQuery\" />
   </ItemGroup>

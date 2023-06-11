@@ -39,6 +39,10 @@ $(document).ready(function () {
                 format: 'YYYY/MM/DD',
                 autoClose: true
             });
+
+            $('.select2Js').select2({
+                dir: 'rtl'
+            });
         });
 
     $(document).on("submit",

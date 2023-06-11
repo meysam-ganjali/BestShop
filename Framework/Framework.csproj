@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="IGenericRepository\" />
     <Folder Include="Infrastructure\" />
+    <Folder Include="DateTools\" />
     <Folder Include="Validation\" />
     <Folder Include="OprationRes\" />
     <Folder Include="SharedDomain\" />

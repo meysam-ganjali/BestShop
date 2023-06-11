@@ -1,3 +1,4 @@
+using BestShop.Query.Boostrapper;
 using ShopManagment.Configuration;
 using SliderManagment.Configuration;
 
@@ -10,6 +11,9 @@ builder.Services.AddRazorPages();
 string connectionStr = builder.Configuration.GetConnectionString("BestShopConnection");
 ShopManagmentBootstapper.Configure(builder.Services, connectionStr);
 SliderManagmentBootstrapper.Configure(builder.Services, connectionStr);
+DiscountManagmentBootstapper.Configure(builder.Services, connectionStr);
+
+BestShop_Bootstrapper.Configure(builder.Services);
 
 #endregion
 

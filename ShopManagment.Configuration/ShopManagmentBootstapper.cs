@@ -1,5 +1,4 @@
-﻿using BestShop.Query.Contracts.ProductCategory;
-using BestShop.Query.Queries.ProductCategory;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ShopManagment.Application.Contracts.Product;
@@ -24,8 +23,6 @@ namespace ShopManagment.Configuration {
 
             service.AddTransient<IProductPictureApplication, ProductPictureApplication>();
             service.AddTransient<IProductPictureRepository, ProductPictureRepository>();
-
-            service.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
 
             service.AddDbContext<ShopDbContext>(op =>
             {
