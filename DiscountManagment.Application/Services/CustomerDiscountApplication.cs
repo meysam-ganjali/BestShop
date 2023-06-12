@@ -8,10 +8,17 @@ namespace DiscountManagment.Application.Services;
 
 public class CustomerDiscountApplication : ICustomerDiscountApplication {
     private readonly ICustomerDiscountRepository _customerDiscountRepository;
+
+    public CustomerDiscountApplication(ICustomerDiscountRepository customerDiscountRepository)
+    {
+        _customerDiscountRepository = customerDiscountRepository;
+    }
     public OprationResult Define(DefineCustomerDiscount command) {
         OprationResult op = new OprationResult();
-        if (_customerDiscountRepository.IsExist(x => x.ProductId == command.ProductId&& x.DiscountRate == command.DiscountRate))
-            return op.Failed("کاربر گزامی شما قبلا برای این محصول دارای تخفیف می باشد");
+        var IsExist = _customerDiscountRepository.IsExist(x =>
+            x.ProductId == command.ProductId && x.DiscountRate == command.DiscountRate);
+        if (IsExist)
+            return op.Failed("کاربر گرامی شما قبلا برای این محصول دارای تخفیف می باشد");
         var customerDiscount = new CustomerDiscount(command.ProductId, command.DiscountRate, command.StartDate,
             command.EndDate, command.Reason);
         _customerDiscountRepository.Add(customerDiscount);
@@ -27,7 +34,9 @@ public class CustomerDiscountApplication : ICustomerDiscountApplication {
         var customerDiscount = _customerDiscountRepository.Get(command.Id);
         if (customerDiscount == null)
             return op.Failed("تخفیف یافت نشد");
-        if(_customerDiscountRepository.IsExist(x=>x.ProductId == command.ProductId && x.Id != command.Id))
+        var IsExist = _customerDiscountRepository.IsExist(x =>
+            (x.ProductId == command.ProductId && x.DiscountRate == command.DiscountRate) && (x.Id != command.Id));
+        if (IsExist)
             return op.Failed("کاربر گزامی شما قبلا برای این محصول دارای تخفیف می باشد");
         customerDiscount.Edit(command.ProductId, command.DiscountRate, command.StartDate,
             command.EndDate, command.Reason);
@@ -51,6 +60,7 @@ public class CustomerDiscountApplication : ICustomerDiscountApplication {
         if (customerDiscount == null)
             return op.Failed("تخفیف یافت نشد");
         customerDiscount.Remove();
+        _customerDiscountRepository.SaveChanges();
         return op.Successed();
     }
 
@@ -60,6 +70,7 @@ public class CustomerDiscountApplication : ICustomerDiscountApplication {
         if (customerDiscount == null)
             return op.Failed("تخفیف یافت نشد");
         customerDiscount.Restore();
+        _customerDiscountRepository.SaveChanges();
         return op.Successed();
     }
 }

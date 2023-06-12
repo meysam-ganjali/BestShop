@@ -1,4 +1,5 @@
 ﻿using Framework.Validation;
+using ShopManagment.Application.Contracts.Product;
 using System.ComponentModel.DataAnnotations;
 
 namespace DiscountManagment.Application.Contracts.CustomerDiscount;
@@ -18,5 +19,5 @@ public class DefineCustomerDiscount
     public DateTime EndDate { get; set; }
 
     public string? Reason { get; set; }
-   // public List<ProductViewModel> Products { get; set; }
+    public List<ProductViewModel> Products { get; set; }
 }
