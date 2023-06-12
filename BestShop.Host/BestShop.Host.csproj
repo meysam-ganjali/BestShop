@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Pages\Discount\Colleague\" />
     <Folder Include="ViewComponents\" />
   </ItemGroup>
 

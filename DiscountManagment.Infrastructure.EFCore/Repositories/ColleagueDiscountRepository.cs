@@ -32,7 +32,7 @@ public class ColleagueDiscountRepository : BaseRepository<long, ColleagueDiscoun
             CreationDate = x.CreatedDate,
             DiscountRate = x.DiscountRate,
             ProductId = x.ProductId,
-            IsRemoved = x.IsRemved
+            IsRemoved = x.IsRemove
         });
 
         if (searchModel.ProductId > 0)
