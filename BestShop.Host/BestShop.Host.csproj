@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BestShop.Query\BestShop.Query.csproj" />
     <ProjectReference Include="..\DiscountManagment.Configuration\DiscountManagment.Configuration.csproj" />
+    <ProjectReference Include="..\InventoryManagment.Configuration\InventoryManagment.Configuration.csproj" />
     <ProjectReference Include="..\ShopManagment.Configuration\ShopManagment.Configuration.csproj" />
     <ProjectReference Include="..\SliderManagment.Configuration\SliderManagment.Configuration.csproj" />
   </ItemGroup>

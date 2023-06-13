@@ -12,6 +12,7 @@ string connectionStr = builder.Configuration.GetConnectionString("BestShopConnec
 ShopManagmentBootstapper.Configure(builder.Services, connectionStr);
 SliderManagmentBootstrapper.Configure(builder.Services, connectionStr);
 DiscountManagmentBootstapper.Configure(builder.Services, connectionStr);
+InventoryManagmentBootstrapper.Configure(builder.Services, connectionStr);
 
 BestShop_Bootstrapper.Configure(builder.Services);
 
