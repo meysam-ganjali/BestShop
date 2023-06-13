@@ -7,6 +7,11 @@ namespace InventoryManagment.Application.Services;
 
 public class InventoryApplication : IInventoryApplication {
     private readonly IInventoryRepository _inventoryRepository;
+
+    public InventoryApplication(IInventoryRepository inventoryRepository)
+    {
+        _inventoryRepository = inventoryRepository;
+    }
     public OprationResult Create(CreateInventory command) {
         OprationResult op = new OprationResult();
         if (_inventoryRepository.IsExist(x => x.ProductId == command.ProductId))
@@ -74,6 +79,6 @@ public class InventoryApplication : IInventoryApplication {
     }
 
     public List<InventoryOperationViewModel> GetOperationLog(long inventoryId) {
-        throw new NotImplementedException();
+        return _inventoryRepository.GetOperationLog(inventoryId);
     }
 }

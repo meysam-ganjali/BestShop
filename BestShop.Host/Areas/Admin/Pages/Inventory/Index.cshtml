@@ -2,14 +2,14 @@
 @using Framework.DateTools
 @model BestShop.Host.Areas.Admin.Pages.Inventory.IndexModel
 @{
-    ViewData["Title"] = "مدیریت تخفیف همکاری";
+    ViewData["Title"] = "مدیریت انبار";
 }
 
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف تخفیف </a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف انبار </a>
         </p>
     </div>
 </div>
@@ -17,7 +17,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"> جستجو در تخفیف ها (@Model.ColleagueDiscount.Count)</h3>
+                <h3 class="panel-title"> جستجو در انبار ها (@Model.Inventories.Count)</h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
@@ -26,6 +26,10 @@
                         <select class="select2Js form-select" asp-for="SearchModel.ProductId" asp-items="Model.Products">
                             <option value="0">محصولات...</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="SearchModel.InStock"></label>
+                      <input asp-for="SearchModel.InStock" class="form-control" value="true"/>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
@@ -38,7 +42,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست  تخفیفات همکاری </h3>
+                <h3 class="panel-title">لیست انبارها </h3>
                 @if (!string.IsNullOrWhiteSpace(Model.Message)) {
 
                     <div class="alert alert-info alert-dismissible  show" role="alert">
@@ -57,36 +61,42 @@
                                 <tr>
                                     <th>#</th>
                                     <th>عنوان محصول</th>
-                                    <th>درصد تخفیف</th>
+                                    <th>قیمت</th>
+                                    <th>تعداد</th>
                                     <th>تاریخ </th>
-                                    <th>فعال/غیرفعال</th>
+                                    <th>موجود/ناموجود</th>
                                     <th>عملیات</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.ColleagueDiscount) {
+                                @foreach (var item in Model.Inventories) {
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>@item.ProductName</td>
-                                        <td>@item.DiscountRate %</td>
+                                        <td>@item.UnitPrice </td>
+                                        <td>@item.CurrentCount </td>
                                         <td>@item.CreationDate.ToFarsi()</td>
                                         <td>
-                                            <p class="text-center"> <i class="fa @(item.IsRemoved?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
+                                            <p class="text-center"> <i class="fa @(!item.InStock?"fa-close text-danger":"fa-check text-success")" style="font-size: 25px;"></i></p>
                                         </td>
                                         <td>
                                             <a class="btn btn-warning pull-right m-rl-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
-                                            @if (item.IsRemoved) {
-                                                <a class="btn btn-success pull-right m-rl-5" asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id">
-                                                    <i class="fa fa-refresh"></i> بازیابی
-                                                </a>
-                                            } else {
-                                                <a class="btn btn-danger pull-right m-rl-5" asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id">
-                                                    <i class="fa fa-trash"></i> حذف
-                                                </a>
-                                            }
+                                            <a class="btn btn-success waves-effect waves-light m-b-5"
+                                               href="#showmodal=@Url.Page("./Index", "Increase", new {id = item.Id})">
+                                                <i class="fa fa-plus"></i> افزایش موجودی
+                                            </a>
+                                            <a  class="btn btn-danger waves-effect waves-light m-b-5"
+                                               href="#showmodal=@Url.Page("./Index", "Reduce", new {id = item.Id})">
+                                                <i class="fa fa-minus"></i> کاهش موجودی
+                                            </a>
+                                            <a  class="btn btn-primary waves-effect waves-light m-b-5"
+                                               href="#showmodal=@Url.Page("./Index", "Log", new {id = item.Id})"
+                                               onclick="$('.modal-dialog').css('width', '60%')">
+                                                <i class="fa fa-recycle"></i> مشاهده گردنش انبار
+                                            </a>
                                         </td>
                                     </tr>
                                 }

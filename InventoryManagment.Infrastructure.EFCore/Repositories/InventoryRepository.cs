@@ -47,15 +47,28 @@ public class InventoryRepository:BaseRepository<long,Inventory>,IInventoryReposi
         });
         if (searchModel.ProductId > 0 || searchModel.ProductId != 0)
             query = query.Where(x => x.ProductId == searchModel.ProductId);
-        if (searchModel.InStock)
-            query = query.Where(x => x.InStock);
-        if (!searchModel.InStock)
-            query = query.Where(x => !x.InStock);
         var inventory = query.OrderByDescending(x => x.Id).ToList();
 
         inventory.ForEach(item =>
             item.ProductName = products.FirstOrDefault(x => x.Id == item.ProductId)?.Name);
 
         return inventory;
+    }
+    public List<InventoryOperationViewModel> GetOperationLog(long inventoryId) {
+     
+        var inventory = _context.Inventory.FirstOrDefault(x => x.Id == inventoryId);
+        var operations = inventory.Operations.Select(x => new InventoryOperationViewModel {
+            Id = x.Id,
+            Count = x.Count,
+            CurrentCount = x.CurrentCount,
+            Description = x.Description,
+            Operation = x.Operation,
+            OperationDate = x.OperationDate,
+            OperatorId = 1,
+            OrderId = 1
+        }).OrderByDescending(x => x.Id).ToList();
+
+
+        return operations;
     }
 }
